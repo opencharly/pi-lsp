@@ -1,0 +1,51 @@
+{
+  "name": "pi-lsp",
+  "version": "0.1.7",
+  "description": "Declarative Pi extension for LSP diagnostics and language-server navigation tools.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "lsp",
+    "language-server",
+    "diagnostics"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "extensions",
+    "README.md",
+    "LICENSE"
+  ],
+  "pi": {
+    "extensions": [
+      "extensions/pi-lsp/index.ts"
+    ]
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "verify": "npm run typecheck && npm test",
+    "prepack": "npm run verify"
+  },
+  "dependencies": {
+    "vscode-jsonrpc": "^8.2.1",
+    "vscode-languageserver-protocol": "^3.17.5"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencharly/pi-lsp.git"
+  }
+}
